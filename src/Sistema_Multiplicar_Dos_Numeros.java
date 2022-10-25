@@ -10,14 +10,15 @@ public class Sistema_Multiplicar_Dos_Numeros {
         int b = scanner.nextInt();
         int resultado=0;
 
-        boolean positivoB=b>-1; //true
-        boolean positivoA=a>-1; //false
+        boolean positivoB=b>-1;// false
+        boolean positivoA=a>-1;// false
 
         int absolutoA=positivoA? a : -a;
 
         for (int i=0;i<absolutoA;i++){
             resultado=resultado+b;
         }
+        System.out.println("EL resultado es = " + resultado);
         if ((!positivoA&&positivoB)||!positivoA){
             resultado=-resultado;
         }
