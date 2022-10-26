@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,13 +8,41 @@ public class Sistema_MenuOperacionesIterativo {
 
 
         Map<String, Integer> opciones = new HashMap<>();
-        opcines.put("Actualizar", 1);
-        opcines.put("Eliminar", 2);
-        opcines.put("Agregar", 3);
-        opcines.put("Listar", 4);
-        opcines.put("Salir", 5);
+        opciones.put("Actualizar", 1);
+        opciones.put("Eliminar", 2);
+        opciones.put("Agregar", 3);
+        opciones.put("Listar", 4);
+        opciones.put("Salir", 5);
 
-        Object[] opArreglo = opcines.keySet().toArray();
+        Object[] opArreglo = opciones.keySet().toArray();
+
+        Object opcion = JOptionPane.showInputDialog(null,
+                "Seleccione una Opcion","Mantenedor de Productos",
+                JOptionPane.INFORMATION_MESSAGE, null,
+                opArreglo, opArreglo[0]);
+        if (opcion == null){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una operacion");
+        } else {
+            opcionIndice = opciones.get(opcion.toString());
+            switch (opcionIndice){
+                case 1:
+                    JOptionPane.showMessageDialog(null, "Usuario actualizado correctamente");
+                    break;
+                case 2:
+                    JOptionPane.showMessageDialog(null, "Usuario Eliminado correctamente");
+                    break;
+                case 3:
+                    JOptionPane.showMessageDialog(null, "Usuario agregado correctamente");
+                    break;
+                case 4:
+                    JOptionPane.showMessageDialog(null, "Usuario Listado correctamente");
+                    break;
+                case 5:
+                    JOptionPane.showMessageDialog(null, "Haz salido con exito");
+                    break;
+            }
+
+        }
 
     }
 }
